@@ -53,3 +53,14 @@ module.exports = {
   }
 }
 ```
+#### Scripts package json
+ Add these scripts to package.json if you want to format all project or current folder
+```json
+  "scripts": {
+    ...
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx"
+  },
+
+```
+
