@@ -1,23 +1,3 @@
-# Musicapp
-
-## For developers
-### Tech stack
-#### Vite
-`npm create vite@latest ./`
-
-```bash
-  npm install
-  npm run dev
-```
-
-#### initialize eslint
-```
-npm install -D eslint
-npx eslint --init
-```
-#### Copy those rules in `.eslintrc.js`
-
-```js
 module.exports = {
   env: {
     browser: true,
@@ -52,4 +32,3 @@ module.exports = {
     }
   }
 }
-```
