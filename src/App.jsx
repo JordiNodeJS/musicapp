@@ -1,7 +1,9 @@
+import Counter from './redux/features/counter/Counter'
+
 function App() {
   return (
     <div>
-      <h1>hi</h1>
+      <Counter />
     </div>
   )
 }
