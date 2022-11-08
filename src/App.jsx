@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Counter } from './redux/features/counter/Counter'
 import { useGetPokemonByNameQuery } from './redux/services/pokemonApi'
 
@@ -10,6 +11,7 @@ function App() {
   // render UI based on data and loading state
 
   console.log('data', data, 'error', error, 'isLoading', isLoading)
+
   return (
     <div>
       <Counter />
