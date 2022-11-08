@@ -64,3 +64,7 @@ module.exports = {
 
 ```
 
+# Install Redux Toolkit and React-Redux
+
+`npm install @reduxjs/toolkit react-redux`
+Continues with [Quick Start](https://redux-toolkit.js.org/tutorials/quick-start)
