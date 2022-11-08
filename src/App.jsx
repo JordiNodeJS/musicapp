@@ -1,4 +1,4 @@
-import Counter from './redux/features/counter/Counter'
+import { Counter } from './redux/features/counter/Counter'
 
 function App() {
   return (
