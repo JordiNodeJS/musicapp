@@ -10,10 +10,13 @@ export const musicApi = createApi({
   endpoints: builder => ({
     songsByGenre: builder.query({
       query: genre => `/charts/genre-world?genre_code=${genre}`
+    }),
+    trackDetails: builder.query({
+      query: trackDetailsId => `/tracks/details?track_id=${trackDetailsId}`
     })
   })
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useSongsByGenreQuery } = musicApi
+export const { useSongsByGenreQuery, useTrackDetailsQuery } = musicApi

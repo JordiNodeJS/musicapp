@@ -1,17 +1,25 @@
+import { Link } from 'react-router-dom'
 import { useSongsByGenreQuery } from '../redux/services/musicApi'
 
 const Browser = () => {
-  const query = useSongsByGenreQuery('ALTERNATIVE')
+  const { data, isLoading, isFetching } = useSongsByGenreQuery('ALTERNATIVE')
+
+  const Song = ({ song }) => (
+    <li style={{ display: 'flex', flexDirection: 'column' }}>
+      <Link to={`/song/${song.key}`}>{song.title}</Link>
+      <small style={{ color: 'pink' }}>{song.subtitle}</small>
+    </li>
+  )
 
   return (
     <div>
       <div className="container">
-        <div>isLoading: {query.isLoading.toString()}</div>
-        <div>isLoading: {query.isFetching.toString()}</div>
+        <div>isLoading: {isLoading.toString()}</div>
+        <div>isLoading: {isFetching.toString()}</div>
       </div>
 
       <ul>
-       { query.data?.map(song => (<li style={{ display: 'flex', flexDirection: 'column' }} key={song.key}>{song.title} <small style={{ color: 'pink' }}>{song.subtitle}</small></li>))}
+       { data?.map(song => <Song key={song.key} song={song} />) }
       </ul>
     </div>
   )
