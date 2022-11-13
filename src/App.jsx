@@ -1,4 +1,3 @@
-import { Counter } from './redux/features/counter/Counter'
 import { BrowserRouter } from 'react-router-dom'
 import Layout from './router/Layout'
 import PagesRouter from './router/PagesRouter'
@@ -14,7 +13,6 @@ function App() {
 
   return (
     <div>
-      <Counter />
       <BrowserRouter>
       <Layout>
         <PagesRouter />
