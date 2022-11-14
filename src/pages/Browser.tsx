@@ -10,8 +10,15 @@ type SongProps = {
   key: string,
   song: TSong
 }
+
+type TSongsByGenre = {
+  data: TSong[],
+  isLoading: boolean,
+  isFetching: boolean
+}
+
 const Browser = () => {
-  const { data, isLoading, isFetching } = useSongsByGenreQuery('ALTERNATIVE')
+  const { data, isLoading, isFetching } = useSongsByGenreQuery<TSongsByGenre>('ALTERNATIVE')
 
   const Song = ({ song }: SongProps) => (
     <li style={{ display: 'flex', flexDirection: 'column' }}>
@@ -19,6 +26,7 @@ const Browser = () => {
       <small style={{ color: 'pink' }}>{song.subtitle}</small>
     </li>
   )
+  const songsView = data?.map((song: TSong) => <Song key={song.key} song={song} />)
 
   return (
     <div>
@@ -28,7 +36,7 @@ const Browser = () => {
       </div>
 
       <ul>
-        {data?.map((song: TSong) => <Song key={song.key} song={song} />)}
+        {songsView}
       </ul>
     </div>
   )
