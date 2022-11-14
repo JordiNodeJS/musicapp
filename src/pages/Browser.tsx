@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom'
 import { useSongsByGenreQuery } from '../redux/services/musicApi'
 
+type TSong = {
+  key: string,
+  title: string,
+  subtitle: string
+}
+type SongProps = {
+  key: string,
+  song: TSong
+}
 const Browser = () => {
   const { data, isLoading, isFetching } = useSongsByGenreQuery('ALTERNATIVE')
 
-  const Song = ({ song }) => (
+  const Song = ({ song }: SongProps) => (
     <li style={{ display: 'flex', flexDirection: 'column' }}>
       <Link to={`/song/${song.key}`}>{song.title}</Link>
       <small style={{ color: 'pink' }}>{song.subtitle}</small>
@@ -19,7 +28,7 @@ const Browser = () => {
       </div>
 
       <ul>
-       { data?.map(song => <Song key={song.key} song={song} />) }
+        {data?.map((song: TSong) => <Song key={song.key} song={song} />)}
       </ul>
     </div>
   )
