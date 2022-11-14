@@ -22,7 +22,8 @@ const Browser = () => {
 
   const Song = ({ song }: SongProps) => (
     <li style={{ display: 'flex', flexDirection: 'column' }}>
-      <Link to={`/song/${song.key}`}>{song.title}</Link>
+      {/* TrackDetails */}
+      <Link to={`/song/${song.key}`}>{song.title}</Link> 
       <small style={{ color: 'pink' }}>{song.subtitle}</small>
     </li>
   )
@@ -34,7 +35,6 @@ const Browser = () => {
         <div>isLoading: {isLoading.toString()}</div>
         <div>isLoading: {isFetching.toString()}</div>
       </div>
-
       <ul>
         {songsView}
       </ul>
